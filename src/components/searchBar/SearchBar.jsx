@@ -9,8 +9,14 @@ const SearchBar = () => {
     const [search, setSearch] = useState("");
 
     // Filter Search Data
-    const filterSearchData = getAllProduct.filter((obj) => obj.title.toLowerCase().includes(search)).slice(0, 8)
-
+    //const filterSearchData = getAllProduct.filter((obj) => obj.title.toLowerCase().includes(search)).slice(0, 8)
+    const filterSearchData = search
+    ? getAllProduct.filter((obj) => {
+        const regex = new RegExp(search, 'i');
+        return regex.test(obj.title); 
+      }).slice(0, 8)
+    : [];
+  
     const navigate = useNavigate();
 
     return (
