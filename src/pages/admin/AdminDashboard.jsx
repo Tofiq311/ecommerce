@@ -1,10 +1,10 @@
-import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ProductDetail from '../../components/admin/ProductDetail';
 import OrderDetail from '../../components/admin/OrderDetail';
 import UserDetail from '../../components/admin/UserDetail';
 import { useContext } from 'react';
 import myContext from '../../context/myContext';
+import { Link } from "react-router-dom";
 
 const AdminDashboard = () => {
     const user = JSON.parse(localStorage.getItem('users'));
@@ -14,7 +14,15 @@ const AdminDashboard = () => {
         
         <div>
             <div className="top mb-5 px-5 mt-5">
+            <div className=" bg-pink-50 py-5 border border-pink-100 rounded-lg">
+                 <Link to={'/'}>
+                    <h1 className=" font-bold text-pink-500 text-2xl text-center">E-Commerce</h1>
+                    </Link>
+                </div>  
+            </div>
+            <div className="top mb-5 px-5 mt-5">
                 <div className=" bg-pink-50 py-5 border border-pink-100 rounded-lg">
+                
                     <h1 className=" text-center text-2xl font-bold text-pink-500">Admin Dashboard</h1>
                 </div>
             </div>

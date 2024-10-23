@@ -55,7 +55,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                     <div className="mb-3">
                         <input
                             type="number"
-                            name="pincode"
+                            name="zipcode"
                             value={addressInfo.pincode}
                             onChange={(e) => {
                                 setAddressInfo({
@@ -63,7 +63,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                     pincode: e.target.value
                                 })
                             }}
-                            placeholder='Enter your pincode'
+                            placeholder='Enter your zipcode'
                             className='bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300'
                         />
                     </div>
@@ -79,7 +79,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                     mobileNumber: e.target.value
                                 })
                             }}
-                            placeholder='Enter your mobileNumber'
+                            placeholder='Enter your MobileNumber'
                             className='bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300'
                         />
                     </div>

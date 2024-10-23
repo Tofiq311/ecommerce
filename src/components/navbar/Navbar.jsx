@@ -29,35 +29,34 @@ const Navbar = () => {
                 <Link to={'/allproduct'}>All Product</Link>
             </li>
 
-            {/* Signup */}
-           
-           {!user ? <li>
-                <Link to={'/signup'}>Signup</Link>
-            </li> : ""}
-            {/* Signup */}
-            {!user ? <li>
-                <Link to={'/login'}>Login</Link>
-            </li> : ""}
-            {/* User */}
-            {user?.role === "user" && <li>
-                <Link to={'/user-dashboard'}>{user.name}</Link>
-            </li>}
-            {/* Admin */}
-            {user?.role === "admin" && <li>
-                <Link to={'/admin-dashboard'}>{user.name}</Link>
-            </li>}
-             {/* logout */}
-             {user && <li className=" cursor-pointer" onClick={logout}>
-                logout
-            </li>}
-
-
             {/* Cart */}
             <li>
                 <Link to={'/cart'}>
                 Cart({cartItems.length})
                 </Link>
             </li>
+            {/* Signup */}
+           
+           {!user ? <li>
+                <Link to={'/signup'}>Signup</Link>
+            </li> : ""}
+            {/* Login */}
+            {!user ? <li>
+                <Link to={'/login'}>Login</Link>
+            </li> : ""}
+            {/* User */}
+            {user?.role === "user" && <li>
+                <Link to={'/user-dashboard'}>Hi, {user.name}</Link>
+            </li>}
+            {/* Admin */}
+            {user?.role === "admin" && <li>
+                <Link to={'/admin-dashboard'}>Hi, {user.name}</Link>
+            </li>}
+             {/* logout */}
+             {user && <li className=" cursor-pointer" onClick={logout}>
+                logout
+            </li>}
+
         </ul>
     )
     return (
